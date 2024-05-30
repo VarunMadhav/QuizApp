@@ -1,38 +1,202 @@
-.App {
+body{
+  margin: 0px;
+  padding: 0px;
+}
+.app{
+  width: 100%;
+  /* border: 1px solid black; */
+  height: 100vh;
+  display: flex;
+  background-color: #020230;
+  color: white;
+}
+.main{
+  border: 1px solid rgb(255, 255, 255);
+  background:linear-gradient(to bottom,rgba(0,0,0,0) , #020230) ,url('./assets/bg.jpg') center;
+
+  flex: 3;
+  display: flex;
+  flex-direction: column;
+}
+.top{
+  flex: 1;
+  display: flex;
+  flex-direction: column-reverse;
+}
+.qa{
+  height: 100%;
+  /* border: 1px solid red; */
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  flex-direction: column;
+}
+.question{
+  width: 80%;
+  background:linear-gradient(#21006d,black);
+  color: aliceblue;
+  border: 2px solid white;
   text-align: center;
+  border-radius: 10px;
+  padding: 15px;
+  font-size: 22px;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.answers{
+  /* border: 1px solid white; */
+  width: 100%;
+  display: flex;
+  /* align-items: center; */
+  justify-content: center;
+  flex-wrap: wrap;
 }
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+.answer{
+  width: 40%;
+  padding: 10px;
+  text-align: center;
+  border: 1px solid rgb(255, 255, 255);
+  font-size: 18px;
+  background:linear-gradient(#000000,rgb(44, 0, 116));
+  border-radius: 15px;
+  font-weight: 500;
+  margin: 0px 10px 20px 10px;
+  cursor: pointer;
+}
+.answer:hover,.answer.active{
+  background: rgb(52, 52, 252);
+}
+.answer.correct{
+  animation: correct 3s ease forwards ;
+}
+@keyframes correct{
+  0%,22%,42%{
+      background: rgb(52, 52, 252);
+  }
+  20%,40%,60%{
+      background:linear-gradient(#000000,rgb(44, 0, 116));
+  }
+  62%,100%{
+      background: rgb(0, 165, 0);
+  }
+}
+.answer.wrong{
+  animation: wrong 3s ease forwards ;
+}
+@keyframes wrong{
+  0%,22%,42%{
+      background: rgb(52, 52, 252);
+  }
+  20%,40%,60%{
+      background:linear-gradient(#000000,rgb(44, 0, 116));
+  }
+  62%,100%{
+      background: rgb(199, 0, 0);
   }
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.bottom{
+  flex: 1;
+}
+.timer{
+  height: 75px;
+  width: 75px;
+  border-radius: 50%;
+  border: 5px solid white;
+  border-width: 5px;  
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 35px;
+  font-weight: bold;
+  margin-left: 80px;
+  margin-bottom: 10px;
+}
+.pyramid{
+  border: 1px solid rgb(255, 255, 255);
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.moneyPyramid{
+  list-style: none;
+  width: 100%;
+  padding: 20px;
+
+}
+.moneyPyramidItem{
+  /* border: 1px solid red; */
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  padding: 5px;
+  padding-left: 10px;
+  border-radius: 10px;
+}
+.moneyPyramidItem.active{
+  background-color: teal;
+}
+.questionNumber{
+  font-size: 18;
+  font-weight: 200;
+  /* border: 1px solid red; */
+  width: 30%;
+}
+.questionAmount{
+  font-size: 20px;
+  font-weight: 300;
+}
+.top.circular{
+  width: 20px;
+  color: white;
+  height: 80px;
+  width: 80px;
+}
+
+.endText{
+  position: relative;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+}
+
+
+.start {
+  width: 250px;
+  height: 100px;
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  justify-content: space-around;
+  position: relative;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
 }
 
-.App-link {
-  color: #61dafb;
+.startInput {
+  width: 100%;
+  height: 30px;
+  border: none;
+  border-radius: 5px;
+  text-align: center;
+  font-size: 18px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.startInput:focus {
+  outline: none;
+}
+
+.startButton {
+  width: 100%;
+  height: 30px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 18px;
+  font-weight: 500;
 }
